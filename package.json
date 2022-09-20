@@ -1,5 +1,5 @@
 {
-  "name": "@dobuki/lib-template",
+  "name": "@dobuki/dok-schema",
   "version": "1.0.1",
   "description": "",
   "main": "src/index.ts",
