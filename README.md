@@ -1,1 +1,1 @@
-# lib-template
+# dok-schema
