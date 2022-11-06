@@ -9,8 +9,10 @@
       "pattern": "^[A-Z]\\w+$"
     }
   },
+  "type": "object",
+  "allOf": [{ "$ref": "../entity.json"}],
   "properties": {
-    "id": {
+    "Name": {
       "$ref": "#/definitions/AuxiliaryId"
     },
     "namespace": {
@@ -24,8 +26,14 @@
       "items": {
         "$ref": "#/definitions/AuxiliaryId"
       }
+    },
+    "aux": {
+      "ActiveFromList": {
+        "$ref": "../auxiliaries/list/active-from-list.json"
+      }
     }
   },
+  "required": ["Name"],
   "additionalProperties": {
     "$ref": "any.json"
   }

@@ -3,7 +3,7 @@
   "id": "https://jacklehamster.github.io/dok-schema/entities/app.json",
   "description": "An app entity",
   "type": "object",
-  "allOf": [{ "$ref": "entity.json" }],
+  "allOf": [{ "$ref": "../entity.json"}],
   "properties": {
     "Scene": { "$ref": "../auxiliaries/app/scene.json" }
   }

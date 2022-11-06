@@ -3,7 +3,7 @@
   "id": "https://jacklehamster.github.io/dok-schema/entities/scene.json",
   "description": "An scene entity",
   "type": "object",
-  "allOf": [{ "$ref": "entity.json" }],
+  "allOf": [{ "$ref": "../entity.json"}],
   "properties": {
   },
   "additionalProperties": false

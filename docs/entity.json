@@ -12,7 +12,7 @@
       "description": "Auxiliaries are attached to entities",
       "type": "object",
       "additionalProperties": {
-        "$ref": "../core/any.json"
+        "$ref": "core/any.json"
       }
     }
   },
@@ -21,7 +21,7 @@
       "description": "This entity's content is in another file.",
       "properties": {
         "Reference": {
-          "$ref": "../auxiliaries/common/reference.json"
+          "$ref": "auxiliaries/common/reference.json"
         }
       },
       "required": ["Reference"]
@@ -33,10 +33,10 @@
           "type": "string"
         },
         "Name": {
-          "$ref": "../auxiliaries/common/name.json"
+          "$ref": "auxiliaries/common/name.json"
         },
         "Log": {
-          "$ref": "../auxiliaries/debug/log.json"
+          "$ref": "auxiliaries/debug/log.json"
         },
         "aux": {
           "type": "object",
@@ -50,7 +50,7 @@
               "description": "The order auxiliary defines the order in which auxiliaries should be executed.",
               "type": "array",
               "items": {
-                "$ref": "../core/auxiliary-definition.json#definitions/AuxiliaryId"
+                "$ref": "core/auxiliary-definition.json#definitions/AuxiliaryId"
               }
             }
           }
