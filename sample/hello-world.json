@@ -1,0 +1,4 @@
+{
+  "$schema": "../schema/entities/scene.json",
+  "Log": ["Hello", "World"]
+}

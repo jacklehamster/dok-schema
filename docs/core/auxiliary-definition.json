@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "id": "https://jacklehamster.github.io/dok-schema/schema/core/auxiliary-definition.json",
+  "id": "https://jacklehamster.github.io/dok-schema/core/auxiliary-definition.json",
   "description": "An auxiliary is attached to entities and allows actions to be performed on that entity.",
   "definitions": {
     "AuxiliaryId": {

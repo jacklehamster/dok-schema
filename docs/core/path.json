@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "id": "https://jacklehamster.github.io/dok-schema/schema/core/path.json",
+  "id": "https://jacklehamster.github.io/dok-schema/core/path.json",
   "description": "A path to a file.",
   "type": "string",
   "pattern": "[\\w/.]+"

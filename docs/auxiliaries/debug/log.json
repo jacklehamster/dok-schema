@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "id": "https://jacklehamster.github.io/dok-schema/schema/auxiliaries/debug/console.json",
+  "id": "https://jacklehamster.github.io/dok-schema/auxiliaries/debug/log.json",
   "description": "The auxiliary for logs.",
   "type": "array",
   "items": {
