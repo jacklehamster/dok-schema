@@ -34,5 +34,5 @@
     }
   },
   "required": ["Name"],
-  "additionalItems": false
+  "additionalProperties": false
 }
