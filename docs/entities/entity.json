@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "id": "https://jacklehamster.github.io/dok-schema/schema/entities/entity.json",
+  "id": "https://jacklehamster.github.io/dok-schema/entities/entity.json",
   "description": "An entity is an instance that can be acted upon, hold information",
   "definitions": {
     "EntityId": {

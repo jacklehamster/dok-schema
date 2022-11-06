@@ -1,5 +1,5 @@
 {
-  "$schema": "../schema/entities/workspace.json",
+  "$schema": "https://jacklehamster.github.io/dok-schema/entities/workspace.json",
   "Workspace": {
     "apps": [
       {
