@@ -33,5 +33,6 @@
       }
     }
   },
-  "required": ["Name"]
+  "required": ["Name"],
+  "additionalItems": false
 }
