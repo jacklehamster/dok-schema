@@ -33,8 +33,5 @@
       }
     }
   },
-  "required": ["Name"],
-  "additionalProperties": {
-    "$ref": "any.json"
-  }
+  "required": ["Name"]
 }
