@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/schema/entities/entity.json",
+  "description": "An entity is an instance that can be acted upon, hold information",
+  "definitions": {
+    "EntityId": {
+      "description": "Identifier for this entity",
+      "type": "string",
+      "pattern": "^[A-Za-z]\\w+$"
+    },
+    "Attachment": {
+      "description": "Auxiliaries are attached to entities",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "../core/any.json"
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "description": "This entity's content is in another file.",
+      "properties": {
+        "Reference": {
+          "$ref": "../auxiliaries/common/reference.json"
+        }
+      },
+      "required": ["Reference"]
+    },
+    {
+      "description": "Inline entity",
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "Name": {
+          "$ref": "../auxiliaries/common/name.json"
+        },
+        "Log": {
+          "$ref": "../auxiliaries/debug/log.json"
+        },
+        "aux": {
+          "type": "object",
+          "patternProperties": {
+            "^[A-Z]\\w+": {
+              "$ref": "#/definitions/Attachment"
+            }
+          },
+          "properties": {
+            "Order": {
+              "description": "The order auxiliary defines the order in which auxiliaries should be executed.",
+              "type": "array",
+              "items": {
+                "$ref": "../core/auxiliary-definition.json#definitions/AuxiliaryId"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

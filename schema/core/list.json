@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/schema/core/list.json",
+  "description": "A list of items, and an index to the active one.",
+  "type": "object",
+  "properties": {
+    "index": {
+      "description": "Index to the active item",
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "patternProperties": {
+    "^\\w+$": {
+      "description": "List of items.",
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

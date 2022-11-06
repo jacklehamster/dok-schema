@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/schema/auxiliaries/workspace/workspace.json",
+  "description": "The auxiliary for a workspace entity.",
+  "type": "object",
+  "allOf": [{ "$ref": "../../core/list.json" }],
+  "properties": {
+    "apps": {
+      "description": "Workspaces contain apps.",
+      "type": "array",
+      "items": {
+        "$ref": "../../entities/app.json"
+      }
+    }
+  },
+  "additionalProperties": false
+}
