@@ -10,7 +10,6 @@
     }
   },
   "type": "object",
-  "allOf": [{ "$ref": "../entity.json"}],
   "properties": {
     "Name": {
       "$ref": "#/definitions/AuxiliaryId"
@@ -34,5 +33,6 @@
     }
   },
   "required": ["Name"],
+  "allOf": [{ "$ref": "../entity.json"}],
   "additionalProperties": false
 }
