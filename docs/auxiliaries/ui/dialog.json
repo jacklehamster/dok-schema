@@ -5,7 +5,8 @@
   "type": ["object", "string"],
   "properties": {
     "message": {
-      "description": "Text to display."
+      "description": "Text to display.",
+      "type": "string"
     }
   },
   "required": ["message"],
