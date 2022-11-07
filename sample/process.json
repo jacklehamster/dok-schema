@@ -1,5 +1,5 @@
 {
-  "$schema": "https://jacklehamster.github.io/dok-schema/auxiliaries/auxiliary-definition.json",
+  "$schema": "../docs/auxiliaries/auxiliary-definition.json",
   "Name": "Process Sample",
   "process": {
     "lang": "NAPL",
@@ -19,6 +19,13 @@
     "sequence": [
       {
         "load": "test.json"
+      },
+      {
+        "goDeep": {
+          "type": "key-value",
+          "sequence": [
+          ]
+        }
       }
     ]
   }

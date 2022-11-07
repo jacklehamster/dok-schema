@@ -1,4 +1,4 @@
 {
-  "$schema": "https://jacklehamster.github.io/dok-schema/entities/scene.json",
+  "$schema": "../docs/entities/scene.json",
   "Log": ["Hello", "World"]
 }

@@ -25,10 +25,7 @@
       }
     },
     "sequence": {
-      "type": "array",
-      "items": {
-        "$ref": "actions/any-action.json"
-      }
+      "$ref": "sequence.json"
     }
   },
   "additionalProperties": false

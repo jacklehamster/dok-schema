@@ -11,6 +11,9 @@
   },
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string"
+    },
     "Name": {
       "$ref": "#/definitions/AuxiliaryId"
     },

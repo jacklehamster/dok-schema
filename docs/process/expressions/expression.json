@@ -5,7 +5,7 @@
   "allOf": [{"$ref": "../../core/any.json"}],
   "properties": {
     "subject": {
-      "description": "Subject ot act upon.",
+      "description": "Subject to act upon.",
       "$ref": "#"
     },
     "equivalent": {

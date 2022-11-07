@@ -3,6 +3,8 @@
   "id": "https://jacklehamster.github.io/dok-schema/process/actions/any-action.json",
   "description": "Any of the possible actions",
   "oneOf": [
-    {"$ref": "load-action.json"}
+    {"$ref": "load-action.json"},
+    {"$ref": "set-action.json"},
+    {"$ref": "go-deep-action.json"}
   ]
 }
