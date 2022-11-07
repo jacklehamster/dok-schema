@@ -16,6 +16,9 @@
           "name": {
             "type": "string",
             "pattern": "^[a-z]\\w*$"
+          },
+          "return": {
+            "$ref": "expression.json"
           }
         },
         "additionalProperties": false

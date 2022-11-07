@@ -1,0 +1,19 @@
+{
+  "$schema": "https://jacklehamster.github.io/dok-schema/auxiliaries/auxiliary-definition.json",
+  "Name": "Process Sample",
+  "process": {
+    "methods": [
+      {
+        "name": "sampleMethod",
+        "return": {
+          "subject": "subject",
+          "key": {
+            "subject": "subject",
+            "key": "key"
+          },
+          "equivalent": "subject[subject.key]"
+        }
+      }
+    ]
+  }
+}
