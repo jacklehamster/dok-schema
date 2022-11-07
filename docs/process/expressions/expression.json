@@ -21,7 +21,8 @@
           "$ref": "#"
         }
       },
-      "required": ["key"]
+      "required": ["key"],
+      "additionalProperties": false
     },
     {
       "properties": {
@@ -34,7 +35,8 @@
           "$ref": "#"
         }
       },
-      "required": ["check"]
+      "required": ["check"],
+      "additionalProperties": false
     },
     {
       "additionalProperties": false

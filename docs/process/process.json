@@ -19,15 +19,15 @@
           },
           "return": {
             "$ref": "expressions/expression.json"
-          },
-          "sequence": {
-            "type": "array",
-            "items": {
-              "$ref": "actions/any-action.json"
-            }
           }
         },
         "additionalProperties": false
+      }
+    },
+    "sequence": {
+      "type": "array",
+      "items": {
+        "$ref": "actions/any-action.json"
       }
     }
   },

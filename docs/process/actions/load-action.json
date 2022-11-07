@@ -9,5 +9,6 @@
     "load": {
       "$ref": "../expressions/string-expression.json"
     }
-  }
+  },
+  "additionalProperties": false
 }
