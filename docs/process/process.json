@@ -21,7 +21,10 @@
             "$ref": "expressions/expression.json"
           },
           "sequence": {
-            "$ref": "actions/any-action.json"
+            "type": "array",
+            "items": {
+              "$ref": "actions/any-action.json"
+            }
           }
         },
         "additionalProperties": false
