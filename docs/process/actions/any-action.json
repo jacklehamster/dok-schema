@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/process/actions/any-action.json",
+  "description": "Any of the possible actions",
+  "anyOf": [
+    {"$ref": "load-action.json"}
+  ]
+}

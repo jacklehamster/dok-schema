@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/process/expressions/string-expression.json",
+  "description": "An expression in a NAPL code process",
+  "allOf": [{"$ref": "expression.json"}],
+  "type": [
+    "string",
+    "object",
+    "null"
+  ],
+  "additionalProperties": false
+}

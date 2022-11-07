@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/process/actions/load-action.json",
+  "description": "An action to load a file",
+  "allOf": [{
+    "$ref": "action.json"
+  }],
+  "properties": {
+    "load": {
+      "$ref": "../expressions/string-expression.json"
+    }
+  }
+}

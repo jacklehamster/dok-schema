@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/process/expressions/expression.json",
+  "description": "An expression in a NAPL code process",
+  "allOf": [{"$ref": "../../core/any.json"}],
+  "properties": {
+    "subject": {
+      "description": "Subject ot act upon.",
+      "$ref": "#"
+    },
+    "equivalent": {
+      "description": "This provides the option to insert an equivalent expression. Both actual and equivalent expressions must be effectively the same.",
+      "$ref": "#"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "key": {
+          "description": "Key of the property within the subject to access.",
+          "$ref": "#"
+        }
+      },
+      "required": ["key"]
+    },
+    {
+      "properties": {
+        "check": {
+          "description": "returns ",
+          "type": "string",
+          "pattern": "^(not\\s)?(equal|empty)"
+        },
+        "operand": {
+          "$ref": "#"
+        }
+      },
+      "required": ["check"]
+    },
+    {
+      "additionalProperties": false
+    }
+  ],
+  "additionalProperties": false
+}

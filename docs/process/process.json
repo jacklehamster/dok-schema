@@ -18,7 +18,10 @@
             "pattern": "^[a-z]\\w*$"
           },
           "return": {
-            "$ref": "expression.json"
+            "$ref": "expressions/expression.json"
+          },
+          "sequence": {
+            "$ref": "actions/any-action.json"
           }
         },
         "additionalProperties": false
