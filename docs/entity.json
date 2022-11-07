@@ -50,7 +50,7 @@
               "description": "The order auxiliary defines the order in which auxiliaries should be executed.",
               "type": "array",
               "items": {
-                "$ref": "core/auxiliary-definition.json#definitions/AuxiliaryId"
+                "$ref": "auxiliaries/auxiliary-definition.json#definitions/AuxiliaryId"
               }
             }
           }

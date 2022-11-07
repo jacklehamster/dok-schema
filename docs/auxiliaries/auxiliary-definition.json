@@ -28,8 +28,11 @@
     },
     "aux": {
       "ActiveFromList": {
-        "$ref": "../auxiliaries/list/active-from-list.json"
+        "$ref": "list/active-from-list.json"
       }
+    },
+    "process": {
+      "$ref": "../process/process.json"
     }
   },
   "required": ["Name"],

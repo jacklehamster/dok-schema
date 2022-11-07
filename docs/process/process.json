@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/process/process.json",
+  "description": "Execute code to process objects",
+  "type": "object",
+  "properties": {
+    "lang": {
+      "type": "string",
+      "enum": ["NAPL"]
+    },
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z]\\w*$"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
