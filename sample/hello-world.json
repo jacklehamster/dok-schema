@@ -1,3 +1,4 @@
 {
-  "$schema": "../docs/entities/scene.json"
+  "$schema": "../docs/entities/scene.json",
+  "Dialog": "Hello World"
 }

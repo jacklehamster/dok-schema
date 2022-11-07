@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/auxiliaries/ui/dialog.json",
+  "description": "This auxiliary displays a dialog with text.",
+  "type": ["object", "string"],
+  "properties": {
+    "message": {
+      "description": "Text to display."
+    }
+  },
+  "required": ["message"],
+  "additionalProperties": false
+}
