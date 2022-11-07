@@ -1,6 +1,6 @@
 {
   "$schema": "../docs/auxiliaries/auxiliary-definition.json",
-  "Name": "Process Sample",
+  "Name": "HelloProcessor",
   "process": {
     "lang": "NAPL",
     "methods": [
@@ -24,6 +24,13 @@
         "goDeep": {
           "type": "key-value",
           "sequence": [
+            {
+              "outputStream": "",
+              "output": [
+                "Hello",
+                "World"
+              ]
+            }
           ]
         }
       }

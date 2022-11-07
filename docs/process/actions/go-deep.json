@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "id": "https://jacklehamster.github.io/dok-schema/process/actions/load-action.json",
+  "id": "https://jacklehamster.github.io/dok-schema/process/actions/go-deep.json",
   "description": "Recurse inside an object and perform actions on underlying members",
   "allOf": [{
     "$ref": "action.json"

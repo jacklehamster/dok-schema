@@ -11,6 +11,11 @@
     "equivalent": {
       "description": "This provides the option to insert an equivalent expression. Both actual and equivalent expressions must be effectively the same.",
       "$ref": "#"
+    },
+    "assign": {
+      "description": "assign to a variable",
+      "type": "string",
+      "pattern": "^[a-z]\\w*$"
     }
   },
   "oneOf": [

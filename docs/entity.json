@@ -35,9 +35,6 @@
         "Name": {
           "$ref": "auxiliaries/common/name.json"
         },
-        "Log": {
-          "$ref": "auxiliaries/debug/log.json"
-        },
         "aux": {
           "type": "object",
           "patternProperties": {
@@ -51,7 +48,8 @@
               "type": "array",
               "items": {
                 "$ref": "auxiliaries/auxiliary-definition.json#definitions/AuxiliaryId"
-              }
+              },
+              "minItems": 1
             }
           }
         }

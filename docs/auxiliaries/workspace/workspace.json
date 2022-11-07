@@ -10,7 +10,8 @@
       "type": "array",
       "items": {
         "$ref": "../../entities/app.json"
-      }
+      },
+      "minItems": 1
     }
   },
   "additionalProperties": false

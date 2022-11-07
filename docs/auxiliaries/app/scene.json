@@ -9,7 +9,8 @@
       "type": "array",
       "items": {
         "$ref": "../../entities/scene.json"
-      }
+      },
+      "minItems": 1
     }
   }
 }

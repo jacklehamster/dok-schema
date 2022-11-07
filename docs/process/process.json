@@ -22,7 +22,8 @@
           }
         },
         "additionalProperties": false
-      }
+      },
+      "minItems": 1
     },
     "sequence": {
       "$ref": "sequence.json"

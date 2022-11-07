@@ -27,7 +27,8 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/AuxiliaryId"
-      }
+      },
+      "minItems": 1
     },
     "aux": {
       "ActiveFromList": {

@@ -2,9 +2,10 @@
   "$schema": "https://json-schema.org/draft-07/schema",
   "id": "https://jacklehamster.github.io/dok-schema/process/actions/any-action.json",
   "description": "Any of the possible actions",
-  "oneOf": [
-    {"$ref": "load-action.json"},
-    {"$ref": "set-action.json"},
-    {"$ref": "go-deep-action.json"}
+  "anyOf": [
+    {"$ref": "go-deep.json"},
+    {"$ref": "load.json"},
+    {"$ref": "output.json"},
+    {"$ref": "../expressions/expression.json"}
   ]
 }
