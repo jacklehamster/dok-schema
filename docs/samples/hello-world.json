@@ -1,0 +1,16 @@
+{
+  "$schema": "../entity.json",
+  "Workspace": {
+    "apps": [
+      {
+        "Application": {
+          "scenes": [
+            {
+              "Message": "Hello World"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

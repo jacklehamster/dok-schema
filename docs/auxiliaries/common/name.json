@@ -1,6 +1,0 @@
-{
-  "$schema": "https://json-schema.org/draft-07/schema",
-  "id": "https://jacklehamster.github.io/dok-schema/auxiliaries/common/name.json",
-  "description": "This auxiliary stores a name.",
-  "type": "string"
-}

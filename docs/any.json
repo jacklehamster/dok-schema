@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "id": "https://jacklehamster.github.io/dok-schema/core/any.json",
+  "id": "https://jacklehamster.github.io/dok-schema/any.json",
   "description": "Any type",
   "type": [
     "number",

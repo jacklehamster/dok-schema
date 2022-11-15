@@ -1,11 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
   "id": "https://jacklehamster.github.io/dok-schema/entity.json",
-  "description": "An entity is an instance that contains auxiliaries",
+  "description": "An auxiliary is attached to an entity to give it properties and functionality.",
   "$ref": "any.json",
   "patternProperties": {
-    "^[A-Z]\\w+": {
-      "$ref": "auxiliary.json"
+    "^[a-z]\\w*$": {
+      "$ref": "entity.json"
     }
   }
 }
