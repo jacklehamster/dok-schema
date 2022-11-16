@@ -53,7 +53,7 @@ Some conflicting auxiliaries can prevent each other's presence.
 
 ### Validation
 
-Entités only contain auxiliaries
+Entities only contain auxiliaries
 All required properties on auxiliaries must be present.
 All properties on auxiliaries must match the type 
 All auxiliaries that an auxiliary depends on must be present on the same entity.

@@ -2,10 +2,27 @@
   "$schema": "https://json-schema.org/draft-07/schema",
   "id": "https://jacklehamster.github.io/dok-schema/entity.json",
   "description": "An auxiliary is attached to an entity to give it properties and functionality.",
-  "$ref": "any.json",
-  "patternProperties": {
-    "^[a-z]\\w*$": {
-      "$ref": "entity.json"
+  "oneOf": [
+    {
+      "description": "An auxiliary can be configured with just one simple type",
+      "$ref": "simple-type.json"
+    },
+    {
+      "type": "object",
+      "description": "This auxiliary is an object",
+      "patternProperties": {
+        "^[a-z]\\w*$": {
+          "$ref": "any.json"
+        }
+      }
+    },
+    {
+      "type": "array",
+      "description": "This auxiliary is an array",
+      "items": {
+        "$ref": "any.json"
+      }
     }
-  }
+  ],
+  "additionalProperties": false
 }

@@ -3,6 +3,7 @@
   "Workspace": {
     "apps": [
       {
+        "Title": "Hello World Application",
         "Application": {
           "scenes": [
             {

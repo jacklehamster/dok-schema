@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "id": "https://jacklehamster.github.io/dok-schema/any.json",
+  "description": "Simple type",
+  "type": [
+    "number",
+    "string",
+    "boolean",
+    "array",
+    "null"
+  ],
+  "items": {
+    "$ref": "simple-type.json"
+  }
+}

@@ -2,12 +2,18 @@
   "$schema": "https://json-schema.org/draft-07/schema",
   "id": "https://jacklehamster.github.io/dok-schema/any.json",
   "description": "Any type",
-  "type": [
-    "number",
-    "string",
-    "boolean",
-    "object",
-    "array",
-    "null"
+  "oneOf": [
+    {
+      "$ref": "simple-type.json"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "entity.json"
+      }
+    },
+    {
+      "$ref": "entity.json"
+    }
   ]
 }

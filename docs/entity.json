@@ -2,10 +2,16 @@
   "$schema": "https://json-schema.org/draft-07/schema",
   "id": "https://jacklehamster.github.io/dok-schema/entity.json",
   "description": "An entity is an instance that contains auxiliaries",
-  "$ref": "any.json",
+  "type": "object",
   "patternProperties": {
     "^[A-Z]\\w+": {
       "$ref": "auxiliary.json"
     }
-  }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
 }
