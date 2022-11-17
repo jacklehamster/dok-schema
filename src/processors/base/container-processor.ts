@@ -1,6 +1,6 @@
-import Processor from './base/processor';
-import Entity from '../model/entity';
-import Auxiliary from '../model/auxiliary';
+import Processor from './processor';
+import Entity from '../../model/entity';
+import Auxiliary from '../../model/auxiliary';
 
 interface ListAuxiliary extends Auxiliary {
     index?: number;
