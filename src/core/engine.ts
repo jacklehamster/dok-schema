@@ -1,5 +1,5 @@
 import Entity from '../model/entity';
-import Processor from '../processors/processor';
+import Processor from '../processors/base/processor';
 import Auxiliary, {AuxiliaryName} from '../model/auxiliary';
 
 const AUX_REGEX = /^[A-Z]/;

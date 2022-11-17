@@ -1,4 +1,4 @@
-import Processor from './processor';
+import Processor from './base/processor';
 import Entity from '../model/entity';
 
 export default class TitleProcessor extends Processor<string> {

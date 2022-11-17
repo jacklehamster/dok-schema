@@ -1,4 +1,4 @@
-import Processor from './processor';
+import Processor from './base/processor';
 import Entity from '../model/entity';
 import Auxiliary from '../model/auxiliary';
 
