@@ -3,10 +3,24 @@
   "Workspace": {
     "apps": [
       {
+        "Name": "hello-world-app",
         "Title": "Hello World Application",
         "Application": {
           "scenes": [
             {
+              "Name": "hello-world-scene",
+              "Message": "Hello World"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "hello-world-app-2",
+        "Title": "Hello World Application 2",
+        "Application": {
+          "scenes": [
+            {
+              "Name": "hello-world-scene",
               "Message": "Hello World"
             }
           ]

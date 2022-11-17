@@ -1,5 +1,5 @@
 import Workspace from "../auxiliaries/workspace";
-import ContainerProcessor from "./container-processor";
+import ContainerProcessor from "./base/container-processor";
 export default class WorkspaceProcessor extends ContainerProcessor<Workspace> {
     constructor();
 }

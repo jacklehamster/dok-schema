@@ -1,12 +1,12 @@
-import Processor from './processor';
 import Entity from '../../model/entity';
 import Auxiliary from '../../model/auxiliary';
+import Renderer from './renderer';
 
 interface ListAuxiliary extends Auxiliary {
     index?: number;
 }
 
-export default class ContainerProcessor<T extends ListAuxiliary> extends Processor<T> {
+export default class ContainerProcessor<T extends ListAuxiliary> extends Renderer<T> {
     listProperty: string;
 
     constructor(listProperty: string) {
@@ -14,10 +14,31 @@ export default class ContainerProcessor<T extends ListAuxiliary> extends Process
         this.listProperty = listProperty;
     }
 
-    async process(container: T, entity: Entity): Promise<void> {
+    getEntities(container: T): Entity[] {
         const listProp = container[this.listProperty];
-        const elements: Entity[] = Array.isArray(listProp) ? listProp : [];
-        const element = elements[container.index ?? 0];
-        await this.engine?.process(element);
+        return Array.isArray(listProp) ? listProp : [];
+    }
+
+    async process(container: T, entity: Entity): Promise<void> {
+        await super.process(container, entity);
+        const element = this.getEntities(container)[container.index ?? -1];
+        if (element) {
+            await this.engine?.process(element);
+        }
+    }
+
+    render(div: HTMLDivElement, container: T, entity: Entity): void {
+        div.innerText = "";
+        this.getEntities(container).forEach(entity => {
+           const link = div.appendChild(document.createElement('div'));
+           link.style.color = "blue";
+           link.style.textDecoration = "underline";
+           link.style.cursor = "pointer";
+           link.addEventListener("mousedown", () => {
+               this.engine?.process(entity);
+           });
+           const name = entity.Name;
+           link.innerText = `${name}`;
+        });
     }
 }

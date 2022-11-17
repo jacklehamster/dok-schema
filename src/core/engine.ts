@@ -5,6 +5,8 @@ import Auxiliary, {AuxiliaryName} from '../model/auxiliary';
 const AUX_REGEX = /^[A-Z]/;
 
 export default class Engine {
+    entity?: Entity;
+
     readonly registration: { [key: AuxiliaryName | string]: Processor<any> | undefined } = {};
 
     register<T extends Auxiliary>(name: AuxiliaryName, processor: Processor<any>) {
@@ -12,12 +14,11 @@ export default class Engine {
         processor.engine = this;
     }
 
-    async process(entity?: Entity): Promise<void> {
+    getEntries(entity?: Entity): {name: string; processor: Processor<any> | undefined; auxiliary: Auxiliary}[] {
         if (!entity) {
-            console.log("No entity to process.");
-            return;
+            return [];
         }
-        const entries = Object.entries(entity)
+        return Object.entries(entity)
             .filter(([key]) => key.match(AUX_REGEX))
             .sort(([ key1 ], [key2]) => key1.localeCompare(key2))
             .map(([name, auxiliary]) => ({
@@ -25,6 +26,19 @@ export default class Engine {
                 auxiliary,
                 processor: this.registration[name],
             }));
+    }
+
+    async process(entity?: Entity): Promise<void> {
+        if (!entity) {
+            console.warn("No entity to process.");
+            return;
+        }
+        for (const {processor} of this.getEntries(this.entity)) {
+            await processor?.onExit?.();
+        }
+
+        this.entity = entity;
+        const entries = this.getEntries(entity);
 
         for (const {name, processor, auxiliary} of entries) {
             if (!processor) {

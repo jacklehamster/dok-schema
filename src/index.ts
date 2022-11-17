@@ -1,9 +1,6 @@
 import Engine from './core/engine';
 import helloWorldEntity from '../docs/samples/hello-world.json'
-import TitleProcessor from './processors/title-processor';
-import MessageProcessor from './processors/message-processor';
-import WorkspaceProcessor from './processors/workspace-processor';
-import ApplicationProcessor from './processors/application-processor';
+import Registration from './core/registration';
 
 declare var globalThis: {
     exports: typeof exports;
@@ -11,10 +8,7 @@ declare var globalThis: {
 
 async function main() {
     const engine = new Engine();
-    engine.register("Workspace", new WorkspaceProcessor());
-    engine.register("Application", new ApplicationProcessor());
-    engine.register("Title", new TitleProcessor());
-    engine.register("Message", new MessageProcessor());
+    Registration.execute(engine);
     await engine.process(helloWorldEntity);
 }
 
