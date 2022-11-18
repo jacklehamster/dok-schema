@@ -40,11 +40,18 @@ export default class Engine {
         this.entity = entity;
         const entries = this.getEntries(entity);
 
-        for (const {name, processor, auxiliary} of entries) {
+        for (const {name, processor} of entries) {
             if (!processor) {
                 console.warn(`No processor for auxiliary: ${name}`);
             }
-           await processor?.process?.(auxiliary, entity);
+        }
+
+        for (const {processor, auxiliary} of entries) {
+            await processor?.onCreate(auxiliary, entity);
+        }
+
+        for (const {processor, auxiliary} of entries) {
+            await processor?.process?.(auxiliary, entity);
         }
     }
 }

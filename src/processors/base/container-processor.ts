@@ -1,12 +1,12 @@
 import Entity from '../../model/entity';
 import Auxiliary from '../../model/auxiliary';
-import Renderer from './renderer';
+import DivRenderer from './div-renderer';
 
 interface ListAuxiliary extends Auxiliary {
     index?: number;
 }
 
-export default class ContainerProcessor<T extends ListAuxiliary> extends Renderer<T> {
+export default class ContainerProcessor<T extends ListAuxiliary> extends DivRenderer<T> {
     listProperty: string;
 
     constructor(listProperty: string) {
@@ -19,15 +19,20 @@ export default class ContainerProcessor<T extends ListAuxiliary> extends Rendere
         return Array.isArray(listProp) ? listProp : [];
     }
 
+    activeElement(container: T) {
+        return this.getEntities(container)[container.index ?? -1];
+    }
+
     async process(container: T, entity: Entity): Promise<void> {
         await super.process(container, entity);
-        const element = this.getEntities(container)[container.index ?? -1];
+        const element = this.activeElement(container);
         if (element) {
             await this.engine?.process(element);
         }
     }
 
-    render(div: HTMLDivElement, container: T, entity: Entity): void {
+    render(container: T, entity: Entity): void {
+        const div: HTMLDivElement = this.div;
         div.innerText = "";
         this.getEntities(container).forEach(entity => {
            const link = div.appendChild(document.createElement('div'));
@@ -37,8 +42,7 @@ export default class ContainerProcessor<T extends ListAuxiliary> extends Rendere
            link.addEventListener("mousedown", () => {
                this.engine?.process(entity);
            });
-           const name = entity.Name;
-           link.innerText = `${name}`;
+           link.innerText = `${entity.Id}`;
         });
     }
 }

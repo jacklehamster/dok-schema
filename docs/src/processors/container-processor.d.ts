@@ -9,4 +9,3 @@ export default class ContainerProcessor<T extends ListAuxiliary> extends Process
     constructor(listProperty: string);
     process(container: T, entity: Entity): Promise<void>;
 }
-export {};

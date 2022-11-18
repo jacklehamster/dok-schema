@@ -4,12 +4,11 @@ import Auxiliary from '../../model/auxiliary';
 
 export default abstract class Renderer<T extends Auxiliary> extends Processor<T> {
     active: boolean = false;
-    div: HTMLDivElement = document.createElement('div');
     refresh: FrameRequestCallback = () => {};
 
     async process(auxiliary: T, entity: Entity): Promise<void> {
         this.refresh = () => {
-            this.render(this.div, auxiliary, entity);
+            this.render(auxiliary, entity);
             if (this.active) {
                 requestAnimationFrame(this.refresh);
             }
@@ -17,7 +16,6 @@ export default abstract class Renderer<T extends Auxiliary> extends Processor<T>
         if (!auxiliary?.initiallyInactive) {
             this.setActive(true);
         }
-        await this.onCreate();
     }
 
     setActive(active: boolean) {
@@ -27,14 +25,5 @@ export default abstract class Renderer<T extends Auxiliary> extends Processor<T>
         }
     }
 
-    async onCreate(): Promise<void> {
-        document.body.appendChild(this.div);
-    }
-
-    async onExit(): Promise<void> {
-        document.body.removeChild(this.div);
-        this.setActive(false);
-    }
-
-    abstract render(div: HTMLDivElement, auxiliary: T, entity: Entity): void;
+    abstract render(auxiliary: T, entity: Entity): void;
 }

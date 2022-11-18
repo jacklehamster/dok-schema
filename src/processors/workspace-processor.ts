@@ -1,4 +1,3 @@
-import Application from "../auxiliaries/application";
 import Workspace from "../auxiliaries/workspace";
 import ContainerProcessor from "./base/container-processor";
 

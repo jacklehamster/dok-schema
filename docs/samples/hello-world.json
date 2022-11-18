@@ -1,27 +1,28 @@
 {
   "$schema": "../entity.json",
+  "Breadcrumbs": {},
   "Workspace": {
     "apps": [
       {
-        "Name": "hello-world-app",
+        "Id": "hello-world-app",
         "Title": "Hello World Application",
         "Application": {
           "scenes": [
             {
-              "Name": "hello-world-scene",
+              "Id": "hello-world-scene-1",
               "Message": "Hello World"
             }
           ]
         }
       },
       {
-        "Name": "hello-world-app-2",
+        "Id": "hello-world-app-2",
         "Title": "Hello World Application 2",
         "Application": {
           "scenes": [
             {
-              "Name": "hello-world-scene",
-              "Message": "Hello World"
+              "Id": "hello-world-scene-2",
+              "Message": "Hello World 2"
             }
           ]
         }
