@@ -24,9 +24,11 @@
     "chai": "^4.2.0",
     "mocha": "^9.1.4",
     "mock-xmlhttprequest": "^7.0.4",
+    "npm": "^9.1.2",
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "dok-file-utils": "^1.0.11",
     "express": "^4.18.1",
     "express-rate-limit": "^6.3.0",
     "express-static": "^1.2.6",
