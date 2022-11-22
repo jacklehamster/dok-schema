@@ -1,5 +1,5 @@
-declare function helloWorld(): void;
+declare function main(): Promise<void>;
 declare const exports: {
-    helloWorld: typeof helloWorld;
+    main: typeof main;
 };
 export default exports;

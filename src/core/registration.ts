@@ -9,7 +9,7 @@ export default class Registration {
         engine.register("Application", new ApplicationProcessor());
         engine.register("Title", new TitleProcessor());
         engine.register("Message", new MessageProcessor());
-        engine.register("Id", new PropertyProcessor<string>());
+        engine.register("Id", new PropertyProcessor<string>("id"));
         engine.register("Breadcrumbs", new BreadcrumbsProcessor());
     }
 }

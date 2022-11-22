@@ -2,18 +2,18 @@ import Processor from './processor';
 import Entity from '../../model/entity';
 import Auxiliary from '../../model/auxiliary';
 
-export default abstract class Renderer<T extends Auxiliary> extends Processor<T> {
+export default abstract class Renderer<T extends (Auxiliary | string)> extends Processor<T> {
     active: boolean = false;
     refresh: FrameRequestCallback = () => {};
 
     async process(auxiliary: T, entity: Entity): Promise<void> {
         this.refresh = () => {
-            this.render(auxiliary, entity);
-            if (this.active) {
+            const keepRendering = this.render(auxiliary, entity);
+            if (this.active && keepRendering) {
                 requestAnimationFrame(this.refresh);
             }
         };
-        if (!auxiliary?.initiallyInactive) {
+        if (typeof(auxiliary) !== "object" || !auxiliary?.initiallyInactive) {
             this.setActive(true);
         }
     }
@@ -25,5 +25,5 @@ export default abstract class Renderer<T extends Auxiliary> extends Processor<T>
         }
     }
 
-    abstract render(auxiliary: T, entity: Entity): void;
+    abstract render(auxiliary: T, entity: Entity): boolean | void;
 }

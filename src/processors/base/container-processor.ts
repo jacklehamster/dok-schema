@@ -6,6 +6,14 @@ interface ListAuxiliary extends Auxiliary {
     index?: number;
 }
 
+export interface ContainerEntity {
+    isContainer?: () => boolean;
+    getEntities?: () => Entity[];
+    getActiveEntity?: () => Entity | undefined;
+    setActiveEntity?: (entity: Entity) => void;
+    index?: number;
+}
+
 export default class ContainerProcessor<T extends ListAuxiliary> extends DivRenderer<T> {
     listProperty: string;
 
@@ -19,30 +27,25 @@ export default class ContainerProcessor<T extends ListAuxiliary> extends DivRend
         return Array.isArray(listProp) ? listProp : [];
     }
 
-    activeElement(container: T) {
-        return this.getEntities(container)[container.index ?? -1];
-    }
-
     async process(container: T, entity: Entity): Promise<void> {
         await super.process(container, entity);
-        const element = this.activeElement(container);
-        if (element) {
-            await this.engine?.process(element);
-        }
+        const containerEntity: ContainerEntity = entity as ContainerEntity;
+
+        containerEntity.isContainer = () => true;
+        containerEntity.getEntities = () => this.getEntities(container);
+        containerEntity.getActiveEntity = () => containerEntity.getEntities?.()[entity.index ?? -1];
+        containerEntity.setActiveEntity = (value: Entity) => containerEntity.index = containerEntity.getEntities?.()?.indexOf(value);
+        containerEntity.getEntities().forEach(e => e.parent = entity);
     }
 
-    render(container: T, entity: Entity): void {
-        const div: HTMLDivElement = this.div;
-        div.innerText = "";
-        this.getEntities(container).forEach(entity => {
-           const link = div.appendChild(document.createElement('div'));
-           link.style.color = "blue";
-           link.style.textDecoration = "underline";
-           link.style.cursor = "pointer";
-           link.addEventListener("mousedown", () => {
-               this.engine?.process(entity);
-           });
-           link.innerText = `${entity.Id}`;
+    render(auxiliary: T, entity: Entity): void {
+        this.div.innerText = "";
+        const containerEntity: ContainerEntity = entity as ContainerEntity;
+        containerEntity.getEntities?.().forEach(e => {
+            this.addLink(`${e?.Id}`, () => {
+                containerEntity.setActiveEntity?.(e);
+                this.engine?.process(e);
+            });
         });
     }
 }
