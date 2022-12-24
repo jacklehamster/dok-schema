@@ -1,18 +1,14 @@
 import Entity from '../model/entity';
 import Processor from '../processors/base/processor';
-import Auxiliary, {AuxiliaryName} from '../model/auxiliary';
+import Auxiliary from '../model/auxiliary';
+import Registration from './registration';
 
 const AUX_REGEX = /^[A-Z]/;
 
 export default class Engine {
     entity?: Entity;
 
-    readonly registration: { [key: AuxiliaryName | string]: Processor<any> | undefined } = {};
-
-    register<T extends Auxiliary>(name: AuxiliaryName, processor: Processor<any>) {
-        this.registration[name] = processor;
-        processor.engine = this;
-    }
+    readonly registration: Registration = new Registration(this);
 
     getEntries(entity?: Entity): {name: string; processor: Processor<any> | undefined; auxiliary: Auxiliary}[] {
         if (!entity) {
@@ -24,7 +20,7 @@ export default class Engine {
             .map(([name, auxiliary]) => ({
                 name,
                 auxiliary,
-                processor: this.registration[name],
+                processor: this.registration.getProcessor(name),
             }));
     }
 

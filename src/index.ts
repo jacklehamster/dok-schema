@@ -1,5 +1,4 @@
 import Engine from './core/engine';
-import Registration from './core/registration';
 import {FileUtils} from 'dok-file-utils';
 import Entity from './model/entity';
 
@@ -13,7 +12,6 @@ declare var globalThis: {
 
 async function main() {
     const engine = new Engine();
-    Registration.execute(engine);
 
     const fileUtils = new FileUtils(XMLHttpRequest);
     const helloWorld = await fileUtils.load(rootPath, 'json');

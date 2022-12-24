@@ -1,12 +1,10 @@
 import Entity from '../model/entity';
 import Processor from '../processors/base/processor';
-import Auxiliary, { AuxiliaryName } from '../model/auxiliary';
+import Auxiliary from '../model/auxiliary';
+import Registration from './registration';
 export default class Engine {
     entity?: Entity;
-    readonly registration: {
-        [key: AuxiliaryName | string]: Processor<any> | undefined;
-    };
-    register<T extends Auxiliary>(name: AuxiliaryName, processor: Processor<any>): void;
+    readonly registration: Registration;
     getEntries(entity?: Entity): {
         name: string;
         processor: Processor<any> | undefined;
