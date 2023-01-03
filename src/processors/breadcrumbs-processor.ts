@@ -31,7 +31,7 @@ export default class BreadcrumbsProcessor extends DivRenderer<string> {
     }
 
     addComponent(entity: Entity, link: boolean) {
-        this.addLink(`${entity?.Id}`, !link ? undefined : () => {
+        this.addLink(`${entity?.Id}`, {}, !link ? undefined : () => {
             this.engine?.process(entity);
         });
     }

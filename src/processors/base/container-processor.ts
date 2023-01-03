@@ -42,7 +42,7 @@ export default class ContainerProcessor<T extends ListAuxiliary> extends DivRend
         this.div.innerText = "";
         const containerEntity: ContainerEntity = entity as ContainerEntity;
         containerEntity.getEntities?.().forEach(e => {
-            this.addLink(`${e?.Id}`, () => {
+            this.addLink(`${e?.Id}`, { box: true }, () => {
                 containerEntity.setActiveEntity?.(e);
                 this.engine?.process(e);
             });
