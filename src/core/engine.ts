@@ -29,8 +29,12 @@ export default class Engine {
             console.warn("No entity to process.");
             return;
         }
-        for (const {processor} of this.getEntries(this.entity)) {
-            await processor?.onExit?.();
+        {
+            const promises = [];
+            for (const {processor} of this.getEntries(this.entity)) {
+                promises.push(processor?.onExit?.());
+            }
+            await Promise.all(promises);
         }
 
         this.entity = entity;
@@ -42,12 +46,20 @@ export default class Engine {
             }
         }
 
-        for (const {processor, auxiliary} of entries) {
-            await processor?.onCreate(auxiliary, entity);
+        {
+            const promises = [];
+            for (const {processor, auxiliary} of entries) {
+                promises.push(processor?.onCreate(auxiliary, entity));
+            }
+            await Promise.all(promises);
         }
 
-        for (const {processor, auxiliary} of entries) {
-            await processor?.process?.(auxiliary, entity);
+        {
+            const promises = [];
+            for (const {processor, auxiliary} of entries) {
+                promises.push(processor?.process?.(auxiliary, entity));
+            }
+            await Promise.all(promises);
         }
     }
 }
